@@ -22,35 +22,39 @@ nav {
   padding-left: 39.5%;
 }
 
-button {
+.choose-button-display {
   padding-left: 5px;
   padding-right: 5px;
 }
 
+.choose-button-display:hover {
+  color: white;
+  background-color: black;
+}
 /* Picture (RR track) styling - splash page */
 .img-track {
-  height: 625px;
-  width: 625px;
+  height: 675px;
+  width: 675px;
   opacity: 0.1;
 }
-.album-1, .album-2, .album-3 {
+.album1, .album2, .album3 {
   position: absolute;
-  left: 225px;
+  left: 250px;
   z-index: -1;
   height: 200px;
   width: 200px;
 }
 
-.album-1 {
-  top: 5px;
+.album1 {
+  top: 45px;
 }
 
-.album-2 {
-  bottom: 215px;
+.album2 {
+  bottom: 225px;
 }
 
-.album-3 {
-  bottom: 10px;
+.album3 {
+  bottom: 20px;
 }
 
 /* Bottom nav styling of document - splash page */
@@ -83,6 +87,48 @@ a:hover {
   padding-top: 5%;
   padding-left: 5%;
   text-shadow: 3px 2px #6b6b47;
+}
+
+/* Styling of album images on playlist page */
+.row{
+  padding-top: 200px;
+  padding-left: 250px;
+
+}
+.album {
+  max-height: 150px;
+  max-width: 150px;
+  padding: 10px;
+}
+
+/* Styling album bin on playlist page */
+.album-bin-label {
+  padding-top: 25px;
+}
+
+.bin-border {
+  border: 1px solid black;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Styling buttons on playlist page */
+
+.playlist-buttons-display {
+  padding-top: 15px;
+  padding-left: 38%;
+}
+
+.clear-button-display:hover {
+  color: white;
+  background-color: black;
+}
+
+.submit-button-display:hover {
+  color: white;
+  background-color: black;
 }
 
 @media (max-width:1000px){
