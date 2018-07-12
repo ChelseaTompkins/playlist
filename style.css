@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f0;
+  font-family: 'Pacifico', cursive;
+}
+
+/* Top nav styling of document - splash page */
+nav {
+  background-color: #c2c2a3;
+  height: 40px;
+  border-bottom: 1px solid black;
+}
+
+/* Track bin and choose tracks diplay styling - splash page */
+.track-bin-display {
+  text-align: center;
+  padding-top: 39.5%;
+}
+
+.choose-tracks-display {
+  padding-left: 39.5%;
+}
+
+button {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Picture (RR track) styling - splash page */
+.img-track {
+  height: 625px;
+  width: 625px;
+  opacity: 0.1;
+}
+.album-1, .album-2, .album-3 {
+  position: absolute;
+  left: 225px;
+  z-index: -1;
+  height: 200px;
+  width: 200px;
+}
+
+.album-1 {
+  top: 5px;
+}
+
+.album-2 {
+  bottom: 215px;
+}
+
+.album-3 {
+  bottom: 10px;
+}
+
+/* Bottom nav styling of document - splash page */
+.nav-bottom {
+  height: 40px;
+  background-color: #6b6b47;
+  position: fixed;
+  width: 100%;
+}
+
+.nav-bottom-link {
+  text-decoration: none;
+  color: #c2c2a3;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+/* Top nav styling on playlist page */
+.playlist-top-nav{
+  background-color: #c2c2a3;
+  height: 150px;
+  border-bottom: 1px solid black;
+  color: white;
+}
+
+.playlist-display {
+  padding-top: 5%;
+  padding-left: 5%;
+  text-shadow: 3px 2px #6b6b47;
+}
+
+@media (max-width:1000px){
+  .album-1, .album-2, .album-3{
+    display:none;
+  }
+}
