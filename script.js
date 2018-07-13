@@ -11,7 +11,7 @@ var submitBinButton = document.getElementById("submit-bin-button");
 
 //Albums API
 var albumsURL = `https://lit-fortress-6467.herokuapp.com/object`;
-
+var bin = [];
 // Listeners for playlist page
 window.addEventListener("load", function(){
   axios.get(albumsURL)
@@ -21,29 +21,34 @@ window.addEventListener("load", function(){
     // console.log(resultsArr);
 
     for(var i=0; i<resultsArr.length; i++){
-      console.log(resultsArr[i]);
       var albumCovers = resultsArr[i].cover_art;
       var albumIDs = resultsArr[i].id;
       albumDiv.innerHTML += `<div><img id=${albumIDs} class=album src=images/${albumCovers}></div>`
     }
 
-
+    var albumContentBin = document.getElementById("album-content-div");
     resultsArr.forEach(item => {
       var albumArtist = item.artist;
       var albumTitle = item.title;
-      var albumContentBin = document.getElementById("album-content-div");
       var currentAlbum = document.getElementById(`${item.id}`);
       currentAlbum.addEventListener("click", function(){
-        albumContentBin.innerHTML += `<p>${albumArtist}: ${albumTitle}</p>`
+        albumContentBin.innerHTML += `<li style="padding-left: 10px;">${albumArtist}: ${albumTitle}</li>`;
+        bin.push({artist: albumArtist, title: albumTitle});
       });
     });
 
-    clearTracksButton.addEventListener("click", function(){
-      alert("clear tracks has been clicked");
-    });
-
     submitBinButton.addEventListener("click", function(){
-      alert("submit bin clicked");
+      axios.post("https://lit-fortress-6467.herokuapp.com/post", bin)
+        .then(function(response){
+          console.log(bin);
+          alert("Submit bin successful!");
+          albumContentBin.innerHTML = '';
+        });
+      });
+
+      clearTracksButton.addEventListener("click", function(){
+        albumContentBin.innerHTML = '';
+        bin = [];
+      });
     });
   });
-});
