@@ -12,13 +12,13 @@ var submitBinButton = document.getElementById("submit-bin-button");
 //Albums API
 var albumsURL = `https://lit-fortress-6467.herokuapp.com/object`;
 var bin = [];
+
 // Listeners for playlist page
 window.addEventListener("load", function(){
   axios.get(albumsURL)
   .then(function(response){
     var data = response.data;
     var resultsArr = data.results;
-    // console.log(resultsArr);
 
     for(var i=0; i<resultsArr.length; i++){
       var albumCovers = resultsArr[i].cover_art;
@@ -32,7 +32,7 @@ window.addEventListener("load", function(){
       var albumTitle = item.title;
       var currentAlbum = document.getElementById(`${item.id}`);
       currentAlbum.addEventListener("click", function(){
-        albumContentBin.innerHTML += `<li style="padding-left: 10px;">${albumArtist}: ${albumTitle}</li>`;
+        albumContentBin.innerHTML += `<li style="padding-left:10px;list-style-type:none;">${albumArtist}: ${albumTitle}</li>`;
         bin.push({artist: albumArtist, title: albumTitle});
       });
     });
