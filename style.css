@@ -132,7 +132,7 @@ a:hover {
 }
 
 @media (max-width:1000px){
-  .album-1, .album-2, .album-3{
+  .album1, .album2, .album3{
     display:none;
   }
 }
