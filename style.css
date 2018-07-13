@@ -135,7 +135,7 @@ a:hover {
 
 .playlist-buttons-display {
   padding-top: 15px;
-  padding-left: 38%;
+  padding-left: 37%;
 }
 
 .clear-button-display:hover {
@@ -148,12 +148,14 @@ a:hover {
   background-color: black;
 }
 
-span{
+p{
+  padding-top: 5px;
+  text-align: center;
   display: none;
 }
 
-@media (max-width:1000px){
-  .album1, .album2, .album3{
+@media (max-width:650px){
+  .album-1, .album-2, .album-3, .img-track {
     display:none;
   }
 }

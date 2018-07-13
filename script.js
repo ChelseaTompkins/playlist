@@ -37,11 +37,13 @@ window.addEventListener("load", function(){
       });
     });
 
+    var message = document.getElementById("message");
+
     submitBinButton.addEventListener("click", function(){
       axios.post("https://lit-fortress-6467.herokuapp.com/post", bin)
         .then(function(response){
           console.log(bin);
-          alert("Submit bin successful!");
+          message.style.display = "block";
           albumContentBin.innerHTML = '';
         });
       });
