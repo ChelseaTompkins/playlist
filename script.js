@@ -44,6 +44,7 @@ window.addEventListener("load", function(){
         .then(function(response){
           console.log(bin);
           message.style.display = "block";
+          setTimeout(function(){message.style.display = "none";}, 1000);
           albumContentBin.innerHTML = '';
         });
       });
